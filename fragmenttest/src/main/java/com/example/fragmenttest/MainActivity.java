@@ -8,6 +8,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -29,6 +30,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 bundle.putString("message","whanamn");
                 BlankFragment1 bf = new BlankFragment1();
                 bf.setArguments(bundle);
+                bf.setFragmentCallback(new IFragmentCallback() {
+                    @Override
+                    public void senMessageToActivity(String s) {
+//                        Toast.makeText(MainActivity.this,s,Toast.LENGTH_SHORT).show();;
+                    }
+
+                    @Override
+                    public String getMessageFromActivity(String msg) {
+                        return "hello i am from Activity";
+                    }
+                });
                 replaceFragment(bf);
                 break;
             case R.id.btn2:
