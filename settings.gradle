@@ -16,3 +16,8 @@ rootProject.name = "AndroidStudy"
 include ':app'
 include ':mypopupwindow'
 include ':recyclerview'
+include ':bujiandonghua'
+include ':viewpager'
+include ':fragment'
+include ':fragment2'
+include ':fragmenttest'
